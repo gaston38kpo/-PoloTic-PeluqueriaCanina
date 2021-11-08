@@ -1,25 +1,26 @@
 package logica;
 
-//import igu.Pantalla;
+import igu.Pantalla;
 
-/**
- * @author Giacobini Gaston Ezequiel
- */
 public class Tpon2 {
-    public static void main(String[] args) {
-        
-//        Pantalla panta = new Pantalla(); // estamos conectando la igu con esta logica
-//        
-//        panta.setVisible(true); // hace visible la interfaz
-//        panta.setLocationRelativeTo(null); // la coloca en el centro de la pantalla
-//        panta.setResizable(false);
-           
 
-            Controladora control = new Controladora();
-            //Cliente client1 = new Cliente(1, 041120211, "nombre1", "raza1", "color1", true, true, "nombre dueño1", "123456", "observaciones");
-            
-            //control.crearCliente(client1);
-            
+    public static void main(String[] args) {
+        //////////////////////////////////////
+        // Creado por: Giacobini Gaston     //
+        // Nombre db : peluqueria_canina    //
+        // Usuario db : root (Sin password) //
+        //////////////////////////////////////
+        
+        // Instancia de la Controladora para inicializar la persistencia
+        Controladora control = new Controladora();
+
+        // Inicializo la igu pasandole la instancia como argumento
+        Pantalla panta = new Pantalla(control); // Conexion de la igu con la logica
+
+        panta.setVisible(true); // La hace visible 
+        panta.setLocationRelativeTo(null); // La centra en la pantalla
+        panta.setResizable(false); // Hace que mantenga su tamaño
+
     }
-    
+
 }

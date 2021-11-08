@@ -1,6 +1,7 @@
 package persistencia;
 
 import logica.Cliente;
+// Proximamente...
 //import java.util.List;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
@@ -10,7 +11,7 @@ public class ControladoraPersistencia {
 
     ClienteJpaController clientJPA = new ClienteJpaController();
 
-    // Alta
+    // Metodo de Alta
     public void crearCliente(Cliente client) {
         try {
             clientJPA.create(client);
@@ -18,9 +19,10 @@ public class ControladoraPersistencia {
             System.out.println("No se pudo crear el huesped: " + e.getMessage());
         }
     }
-
-    // Baja (Dos metodos porque se sobrecarga para ambos inputs)
-    /*
+    
+    /* Proximamente...
+    // Metodo de Baja (Dos metodos porque se sobrecarga para ambos inputs)
+    
     public void eliminarCliente(Cliente client) {
         try {
             clientJPA.destroy(client.getId());
@@ -37,13 +39,13 @@ public class ControladoraPersistencia {
         }
     }
     
-    // Lectura
+    // Metodo de Lectura
     
     public List<Cliente> obtenerClientes(){
         return clientJPA.findClienteEntities();        
     }
     
-    // Modificacion
+    // Metodo de Modificacion
     
     public void modificarCliente(Cliente client) {
         try {
@@ -53,7 +55,7 @@ public class ControladoraPersistencia {
         }
     }
     
-    // Busqueda
+    // Metodo de Busqueda
     
     public Cliente buscarCliente(Cliente client) {
         return clientJPA.findCliente(client.getId());
