@@ -1,5 +1,6 @@
 package igu;
 
+import javax.swing.JOptionPane;
 import logica.Controladora;
 
 public class Pantalla extends javax.swing.JFrame {
@@ -9,6 +10,18 @@ public class Pantalla extends javax.swing.JFrame {
     public Pantalla(Controladora control) {
         this.control = control;
         initComponents();
+    }
+
+    private void clearFields() {
+        txtClientNumber.setText("");
+        txtName.setText("");
+        txtBreed.setText("");
+        txtColor.setText("");
+        cbotAlergic.setSelectedIndex(0);
+        cboSpecialAttention.setSelectedIndex(0);
+        txtOwner.setText("");
+        txtCellphone.setText("");
+        txtObservations.setText("");
     }
 
     @SuppressWarnings("unchecked")
@@ -296,15 +309,7 @@ public class Pantalla extends javax.swing.JFrame {
 
     private void btnCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCleanActionPerformed
 
-        txtClientNumber.setText("");
-        txtName.setText("");
-        txtBreed.setText("");
-        txtColor.setText("");
-        cbotAlergic.setSelectedIndex(0);
-        cboSpecialAttention.setSelectedIndex(0);
-        txtOwner.setText("");
-        txtCellphone.setText("");
-        txtObservations.setText("");
+        this.clearFields();
 
     }//GEN-LAST:event_btnCleanActionPerformed
 
@@ -321,7 +326,9 @@ public class Pantalla extends javax.swing.JFrame {
         String observations = txtObservations.getText();
 
         control.crearCliente(clientNumber, name, breed, color, alergic, specialAttention, owner, cellphone, observations);
-        this.btnCleanActionPerformed(evt);
+
+        JOptionPane.showMessageDialog(rootPane, "Cliente agregado correctamente", "Cliente Agregado", JOptionPane.INFORMATION_MESSAGE);
+        this.clearFields();
     }//GEN-LAST:event_btnSaveActionPerformed
 
 
